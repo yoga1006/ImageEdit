@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ImageEdit
 //
-//  Created by 王鈞則 on 2022/8/18.
+//  Created by Yoga on 2022/8/18.
 //
 
 import UIKit
