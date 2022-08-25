@@ -19,9 +19,7 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate & U
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func addPhoto(_ sender: Any) {
-       
+    func pickImage(){
         let controller = UIImagePickerController()
         controller.delegate = self
         controller.sourceType = .photoLibrary
@@ -29,8 +27,20 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate & U
         pictureImgeView.isHidden = true
         editImageView.isHidden = true
         
+    }
+    
+    @IBAction func addPhoto(_ sender: Any) {
+        //設定視窗顯示的內容及樣式
+        let choosecontroller = UIAlertController()
+        //設定視窗顯示的內容及樣式
+        let albumAction = UIAlertAction(title: "Album", style: .default) { [self] albumAction in
+            self.pickImage()
+        }
+        choosecontroller.addAction(albumAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        choosecontroller.addAction(cancelAction)
         
-        
+        present(choosecontroller, animated: true)
     }
     
     
