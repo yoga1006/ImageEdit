@@ -78,7 +78,6 @@ class EditViewController: UIViewController, UIColorPickerViewControllerDelegate 
     @IBAction func changeScale(_ sender: UIButton) {
         sizeSegmentedControl.isHidden = false
         zoominSlider.isHidden = false
-        
     }
     
     //改變照片比例
@@ -101,16 +100,13 @@ class EditViewController: UIViewController, UIColorPickerViewControllerDelegate 
         default: //1:1
             width = length
             height = length
-           
         }
         picImageView.bounds.size = CGSize(width: width, height: height)
     }
     
-    
     @IBAction func zoominout(_ sender: Any) {
         picImageView.transform = CGAffineTransform(scaleX: CGFloat(zoominSlider.value), y: CGFloat(zoominSlider.value))
     }
-    
     
     
     //改變背景顏色
